@@ -1,5 +1,5 @@
 # ADTopk
-__ADTopk__  is an all-dimension Top-k sparsification scheme, which selects the largest 𝑘 elements from all dimensions of the gradient in each layer, meaning that each dimension must provide some elements, so as to avoid the dimension missing. Further, __ADTopk__ enables each dimension to perform sorting locally within the elements of the dimension, and thus all dimensions can perform multiple local sortings independently and parallelly, instead of a single global sorting for the entire gradient in each layer. 
+__ADTopk__  is an all-dimension Top-k sparsification scheme, which selects the largest 𝑘 elements from all dimensions of the gradient tensor in each layer, meaning that each dimension must provide some elements, so as to avoid the dimension missing. Further, __ADTopk__ enables each dimension to perform sorting locally within the elements of the dimension, and thus all dimensions can perform multiple local sortings independently and parallelly, instead of a single global sorting for the entire gradient in each layer. 
 
 On top of __ADTopk__, we further propose an interleaving compression scheme and an efficient threshold estimation algorithm so as to enhance the performance of __ADTopk__. We build a sparsification compression data-parallel DNN training framework and implement a compression library containing state-of-the-art sparsification algorithms.
 
@@ -62,6 +62,16 @@ bash run_squad.sh
 # Papers
 - ADTopk: All-Dimension Top-k Compression for High-Performance Data-Parallel DNN Training
 
+If you are using this repository for your paper, please cite our work
+```
+@inproceedings{ming2024adtopk,
+  title={ADTopk: All-Dimension Top-k Compression for High-Performance Data-Parallel DNN Training},
+  author={Zhangqiang, Ming and Yuchong, Hu and Wenxiang, Zhou and Xinjue, Zheng and Chenxuan, Yao and Dan, Feng},
+  booktitle={Proceedings of the 33nd International Symposium on High-Performance Parallel and Distributed Computing},
+  url={https://doi.org/10.1145/3625549.3658678}
+  year={2024}
+}
+```
 
 # Referred Datasets
 - CIFAR-100: [https://www.cs.utoronto.ca/~kriz/cifar.html](https://www.cs.utoronto.ca/~kriz/cifar.html)
