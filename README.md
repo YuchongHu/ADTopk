@@ -1,5 +1,5 @@
-# ADTopk
-__ADTopk__  is an all-dimension Top-k sparsification scheme, which selects the largest 𝑘 elements from all dimensions of the gradient tensor in each layer, meaning that each dimension must provide some elements, so as to avoid the dimension missing. Further, __ADTopk__ enables each dimension to perform sorting locally within the elements of the dimension, and thus all dimensions can perform multiple local sortings independently and parallelly, instead of a single global sorting for the entire gradient in each layer. 
+# ADTopk: All-Dimension Top-k Compression for High-Performance Distributed Training Systems
+__ADTopk__  is an all-dimension Top-k sparsification scheme, which selects the largest 𝑘 elements from all dimensions of the gradient in each layer, meaning that each dimension must provide some elements, so as to avoid the dimension missing. Further, __ADTopk__ enables each dimension to perform sorting locally within the elements of the dimension, and thus all dimensions can perform multiple local sortings independently and parallelly, instead of a single global sorting for the entire gradient in each layer. 
 
 On top of __ADTopk__, we further propose an interleaving compression scheme and an efficient threshold estimation algorithm so as to enhance the performance of __ADTopk__. We build a sparsification compression data-parallel DNN training framework and implement a compression library containing state-of-the-art sparsification algorithms.
 
@@ -27,8 +27,12 @@ We use the PyTorch framework and implemented the prototype system of __ADTopk__ 
 
 <!-- ![Overview](Overview.jpg) -->
 <center class ='img'>
-<img src="Overview.jpg" width="700px" />
+<img src="overview_1.jpg" width="700px" />
 </center>
+
+
+We implement __ADTopk__, which mainly consists of four main modules, an interleaving compression module (i.e., __ADTopk__-i), a threshold estimation sparsification module (i.e., __ADTopk__-t), a communication and aggregation module, a residual gradient error feedback module, and a scalable heterogeneous training module (i.e., __ADTopk__-s).
+We also implement an experimental proof module to prove the stable convergence of __ADTopk__ distributed SGD on multiple training tasks.
 
 # Installation
 ### Prerequisites
@@ -60,6 +64,10 @@ bash run_squad.sh
 ```
 
 # Papers
+An 11-page conference version of this paper appeared in the Proceedings of the 33rd International Symposium on High-Performance Parallel and Distributed Computing (HPDC2024), June 2024.
+In this version, we add theoretical proof of __ADTopk__ convergence and scale __ADTopk__ to heterogeneous cluster training. In the experimental part, we rerun more experiments for analysis and discussion.
+
+
 - ADTopk: All-Dimension Top-k Compression for High-Performance Data-Parallel DNN Training
 
 If you are using this repository for your paper, please cite our work
@@ -81,4 +89,9 @@ If you are using this repository for your paper, please cite our work
 
 
 # License
-See [LICENSE](https://github.com/ATC24-FGBuff/FGBuff/blob/main/LICENSE.txt).
+See [LICENSE](https://github.com/zqming-cs/ADTopk/blob/main/LICENSE).
+
+
+
+
+
