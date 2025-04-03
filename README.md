@@ -64,7 +64,7 @@ bash run_squad.sh
 ```
 
 # Papers
-An 11-page conference version of this paper appeared in the Proceedings of the 33rd International Symposium on High-Performance Parallel and Distributed Computing (HPDC2024), June 2024.
+An 11-page conference version of this paper appeared in the _Proceedings of the 33rd International Symposium on High-Performance Parallel and Distributed Computing (HPDC2024), June 2024_.
 In this version, we add theoretical proof of __ADTopk__ convergence and scale __ADTopk__ to heterogeneous cluster training. In the experimental part, we rerun more experiments for analysis and discussion.
 
 
