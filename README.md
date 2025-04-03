@@ -3,6 +3,9 @@ __ADTopk__  is an all-dimension Top-k sparsification scheme, which selects the l
 
 On top of __ADTopk__, we further propose an interleaving compression scheme and an efficient threshold estimation algorithm so as to enhance the performance of __ADTopk__. We build a sparsification compression data-parallel DNN training framework and implement a compression library containing state-of-the-art sparsification algorithms.
 
+We also prove the stable convergence of __ADTopk__ distributed SGD theoretically and experimentally. We scale __ADTopk__ by introducing a layer-wise adaptive sparsification compression scheme and a partial staleness gradient compensation scheme to improve the training efficiency of __ADTopk__ in heterogeneous clusters. We build a sparsification compression data-parallel DNN training framework and implement a compression library containing state-of-the-art sparsification compression methods.
+
+
 
 # Introduction
 
